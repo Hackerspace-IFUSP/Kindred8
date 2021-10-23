@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Sprites/Button1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://Font/MISTRAL.TTF" type="DynamicFontData" id=8]
 [ext_resource path="res://Sprites/Buildings.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Sky.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Button6.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Button5.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Big_button.png" type="Texture" id=13]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -37,6 +40,10 @@ font_data = ExtResource( 8 )
 [sub_resource type="StyleBoxEmpty" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=38]
+
+[sub_resource type="StyleBoxEmpty" id=39]
 
 [sub_resource type="StyleBoxEmpty" id=12]
 
@@ -141,7 +148,7 @@ tracks/7/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.02, 1.02 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=14]
 resource_name = "event"
 length = 0.3
 tracks/0/type = "value"
@@ -193,7 +200,7 @@ tracks/3/keys = {
 "values": [ Vector2( 651.335, 281 ), Vector2( 959.335, 281 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=15]
 resource_name = "event2"
 length = 0.3
 tracks/0/type = "value"
@@ -245,11 +252,11 @@ tracks/3/keys = {
 "values": [ Vector2( 959.335, 281 ), Vector2( 651.335, 281 ) ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=33]
 resource_name = "event"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Back_button/Back:rect_position")
+tracks/0/path = NodePath("Fix_b:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -258,14 +265,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -169.109, 97.2066 ), Vector2( 51.8907, 97.2066 ) ]
+"values": [ Vector2( 939.569, 175.781 ), Vector2( 645.569, 175.781 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scare_off_b:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 968.159, 78.2368 ), Vector2( 674.159, 78.2368 ) ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=17]
 resource_name = "event2"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Back_button/Back:rect_position")
+tracks/0/path = NodePath("Fix_b:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -274,14 +293,34 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 51.8907, 97.2066 ), Vector2( -169.109, 97.2066 ) ]
+"values": [ Vector2( 645.569, 175.781 ), Vector2( 939.569, 175.781 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scare_off_b:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 674.159, 78.2368 ), Vector2( 968.159, 78.2368 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="StyleBoxEmpty" id=34]
+
+[sub_resource type="StyleBoxEmpty" id=35]
+
+[sub_resource type="StyleBoxEmpty" id=36]
+
+[sub_resource type="StyleBoxEmpty" id=37]
+
+[sub_resource type="Animation" id=19]
 resource_name = "event"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Back_button/Back:rect_position")
+tracks/0/path = NodePath("Fix_p:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -290,14 +329,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -169.109, 97.2066 ), Vector2( 51.8907, 97.2066 ) ]
+"values": [ Vector2( 939.569, 175.781 ), Vector2( 648.569, 175.781 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scare_off_p:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 968.159, 78.2368 ), Vector2( 677.159, 78.2368 ) ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=48]
 resource_name = "event2"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Back_button/Back:rect_position")
+tracks/0/path = NodePath("Fix_p:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -306,14 +357,46 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 51.8907, 97.2066 ), Vector2( -169.109, 97.2066 ) ]
+"values": [ Vector2( 648.569, 175.781 ), Vector2( 939.569, 175.781 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scare_off_p:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 677.159, 78.2368 ), Vector2( 968.159, 78.2368 ) ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="StyleBoxEmpty" id=49]
+
+[sub_resource type="StyleBoxEmpty" id=50]
+
+[sub_resource type="StyleBoxEmpty" id=51]
+
+[sub_resource type="StyleBoxEmpty" id=52]
+
+[sub_resource type="StyleBoxEmpty" id=53]
+
+[sub_resource type="StyleBoxEmpty" id=54]
+
+[sub_resource type="StyleBoxEmpty" id=55]
+
+[sub_resource type="StyleBoxEmpty" id=56]
+
+[sub_resource type="StyleBoxEmpty" id=57]
+
+[sub_resource type="StyleBoxEmpty" id=58]
+
+[sub_resource type="Animation" id=42]
 resource_name = "event"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Back_button/Back:rect_position")
+tracks/0/path = NodePath("Imp_barn_space:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -322,14 +405,62 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -169.109, 97.2066 ), Vector2( 51.8907, 97.2066 ) ]
+"values": [ Vector2( 407.647, 608.691 ), Vector2( 407.647, 109.691 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Imp_scarecrow:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 626.557, 583.925 ), Vector2( 626.557, 84.9254 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("less_energy:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 571.812, 802.904 ), Vector2( 571.812, 303.904 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("less_repair:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 139.518, 864.256 ), Vector2( 139.518, 365.256 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Imp_harvest:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 178.877, 589.954 ), Vector2( 178.877, 90.9541 ) ]
 }
 
-[sub_resource type="Animation" id=30]
-resource_name = "event2"
+[sub_resource type="Animation" id=32]
+resource_name = "event"
 length = 0.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Back_button/Back:rect_position")
+tracks/0/path = NodePath("Imp_barn_space:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -338,8 +469,70 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 51.8907, 97.2066 ), Vector2( -169.109, 97.2066 ) ]
+"values": [ Vector2( 407.647, 109.691 ), Vector2( 407.647, 608.691 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Imp_scarecrow:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 626.557, 84.9254 ), Vector2( 626.557, 583.925 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("less_energy:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 571.812, 303.904 ), Vector2( 571.812, 802.904 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("less_repair:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 139.518, 365.256 ), Vector2( 139.518, 864.256 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Imp_harvest:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 178.877, 90.9541 ), Vector2( 178.877, 589.954 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=43]
+
+[sub_resource type="StyleBoxEmpty" id=44]
+
+[sub_resource type="StyleBoxEmpty" id=45]
+
+[sub_resource type="StyleBoxEmpty" id=46]
+
+[sub_resource type="StyleBoxEmpty" id=47]
+
+[sub_resource type="StyleBoxEmpty" id=40]
+
+[sub_resource type="StyleBoxEmpty" id=41]
 
 [sub_resource type="StyleBoxEmpty" id=22]
 
@@ -347,26 +540,57 @@ tracks/0/keys = {
 
 [sub_resource type="StyleBoxEmpty" id=24]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="Animation" id=20]
+resource_name = "event"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Back_button/Back:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -169.109, 140 ), Vector2( 51.891, 140 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "event2"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Back:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 51.891, 140 ), Vector2( -169.109, 140 ) ]
+}
+
+[sub_resource type="DynamicFont" id=25]
 size = 40
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=26]
 size = 24
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=27]
 size = 40
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=17]
-resource_name = "event"
+[sub_resource type="Animation" id=28]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -466,14 +690,13 @@ tracks/7/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.01, 1.01 ) ]
 }
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=29]
 size = 32
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=18]
-resource_name = "event"
+[sub_resource type="Animation" id=30]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -540,7 +763,7 @@ __meta__ = {
 [node name="Discs" type="Node" parent="."]
 
 [node name="Buildings" type="Sprite" parent="Discs"]
-position = Vector2( 397.582, 790.183 )
+position = Vector2( 378.555, 869.157 )
 texture = ExtResource( 9 )
 
 [node name="Sky" type="Sprite" parent="Discs"]
@@ -663,6 +886,8 @@ margin_top = 97.2066
 margin_right = 186.89
 margin_bottom = 147.207
 rect_rotation = 30.7538
+custom_styles/hover = SubResource( 38 )
+custom_styles/pressed = SubResource( 39 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 12 )
@@ -695,35 +920,426 @@ __meta__ = {
 anims/event = SubResource( 13 )
 
 [node name="anim_button_change" type="AnimationPlayer" parent="Button_main"]
-anims/event = SubResource( 20 )
-anims/event2 = SubResource( 21 )
+anims/event = SubResource( 14 )
+anims/event2 = SubResource( 15 )
 
 [node name="Button_barn" type="Node" parent="."]
 
 [node name="anim_barn" type="AnimationPlayer" parent="Button_barn"]
-anims/event = SubResource( 25 )
-anims/event2 = SubResource( 26 )
+anims/event = SubResource( 33 )
+anims/event2 = SubResource( 17 )
+
+[node name="Scare_off_b" type="Button" parent="Button_barn"]
+margin_left = 968.159
+margin_top = 78.2368
+margin_right = 1106.16
+margin_bottom = 128.237
+rect_rotation = 24.466
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 35 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 12 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Sprite" parent="Button_barn/Scare_off_b"]
+position = Vector2( 74.3566, 23.1131 )
+rotation = -0.451966
+scale = Vector2( 0.98, 0.98 )
+texture = ExtResource( 12 )
+
+[node name="ActionA4" type="Label" parent="Button_barn/Scare_off_b"]
+margin_left = -11.018
+margin_top = 2.49571
+margin_right = 126.982
+margin_bottom = 48.4957
+rect_rotation = -4.33678
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Scare off"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fix_b" type="Button" parent="Button_barn"]
+margin_left = 939.569
+margin_top = 175.781
+margin_right = 1077.57
+margin_bottom = 225.781
+rect_rotation = 24.466
+custom_styles/hover = SubResource( 36 )
+custom_styles/pressed = SubResource( 37 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 12 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Sprite" parent="Button_barn/Fix_b"]
+position = Vector2( 61.9453, 32.2484 )
+rotation = -0.533683
+scale = Vector2( 0.98, 0.98 )
+texture = ExtResource( 11 )
+
+[node name="ActionA4" type="Label" parent="Button_barn/Fix_b"]
+margin_left = -11.018
+margin_top = 2.49571
+margin_right = 126.982
+margin_bottom = 48.4957
+rect_rotation = -4.33678
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Fix Barn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_plantation" type="Node" parent="."]
 
 [node name="anim_plantation" type="AnimationPlayer" parent="Button_plantation"]
-anims/event = SubResource( 27 )
-anims/event2 = SubResource( 28 )
+anims/event = SubResource( 19 )
+anims/event2 = SubResource( 48 )
+
+[node name="Scare_off_p" type="Button" parent="Button_plantation"]
+margin_left = 968.159
+margin_top = 78.2368
+margin_right = 1106.16
+margin_bottom = 128.237
+rect_rotation = 24.466
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
+custom_styles/disabled = SubResource( 52 )
+custom_styles/normal = SubResource( 53 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Sprite" parent="Button_plantation/Scare_off_p"]
+position = Vector2( 74.3566, 23.1131 )
+rotation = -0.451966
+scale = Vector2( 0.98, 0.98 )
+texture = ExtResource( 12 )
+
+[node name="ActionA4" type="Label" parent="Button_plantation/Scare_off_p"]
+margin_left = -11.018
+margin_top = 2.49571
+margin_right = 126.982
+margin_bottom = 48.4957
+rect_rotation = -4.33678
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Scare off"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fix_p" type="Button" parent="Button_plantation"]
+margin_left = 939.569
+margin_top = 175.781
+margin_right = 1077.57
+margin_bottom = 225.781
+rect_rotation = 24.466
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
+custom_styles/focus = SubResource( 56 )
+custom_styles/disabled = SubResource( 57 )
+custom_styles/normal = SubResource( 58 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Sprite" parent="Button_plantation/Fix_p"]
+position = Vector2( 61.9453, 32.2484 )
+rotation = -0.533683
+scale = Vector2( 0.98, 0.98 )
+texture = ExtResource( 11 )
+
+[node name="ActionA4" type="Label" parent="Button_plantation/Fix_p"]
+margin_left = -33.7779
+margin_top = 0.766479
+margin_right = 166.222
+margin_bottom = 46.7665
+rect_rotation = -4.33678
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Fix Scarecrow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_upgrades" type="Node" parent="."]
 
 [node name="anim_upgrades" type="AnimationPlayer" parent="Button_upgrades"]
-anims/event = SubResource( 29 )
-anims/event2 = SubResource( 30 )
+anims/event = SubResource( 42 )
+anims/event2 = SubResource( 32 )
+
+[node name="Imp_harvest" type="Button" parent="Button_upgrades"]
+margin_left = 178.877
+margin_top = 589.954
+margin_right = 316.878
+margin_bottom = 737.954
+rect_rotation = -9.53626
+custom_styles/hover = SubResource( 43 )
+custom_styles/pressed = SubResource( 44 )
+custom_styles/focus = SubResource( 45 )
+custom_styles/disabled = SubResource( 46 )
+custom_styles/normal = SubResource( 47 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sprite" type="Sprite" parent="Button_upgrades/Imp_harvest"]
+position = Vector2( 68.1032, 76.7459 )
+rotation = -0.0396032
+scale = Vector2( 0.660049, 0.660049 )
+texture = ExtResource( 13 )
+
+[node name="text" type="Label" parent="Button_upgrades/Imp_harvest"]
+margin_left = -9.95036
+margin_top = -6.66941
+margin_right = 161.05
+margin_bottom = 88.3306
+rect_rotation = -10.8901
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Improve
+      harvast"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="Button_upgrades/Imp_harvest"]
+margin_left = -0.051178
+margin_top = 124.58
+margin_right = 93.9488
+margin_bottom = 170.58
+rect_rotation = -10.8901
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Price: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Imp_barn_space" type="Button" parent="Button_upgrades"]
+margin_left = 407.647
+margin_top = 608.691
+margin_right = 545.647
+margin_bottom = 756.69
+rect_rotation = 9.94638
+custom_styles/hover = SubResource( 43 )
+custom_styles/pressed = SubResource( 44 )
+custom_styles/focus = SubResource( 45 )
+custom_styles/disabled = SubResource( 46 )
+custom_styles/normal = SubResource( 47 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sprite" type="Sprite" parent="Button_upgrades/Imp_barn_space"]
+position = Vector2( 68.1032, 76.7459 )
+rotation = -0.0396032
+scale = Vector2( 0.660049, 0.660049 )
+texture = ExtResource( 13 )
+
+[node name="text" type="Label" parent="Button_upgrades/Imp_barn_space"]
+margin_left = 28.3872
+margin_top = -33.5907
+margin_right = 178.387
+margin_bottom = 61.4093
+rect_rotation = 3.31112
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Improve
+barn Space	"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="Button_upgrades/Imp_barn_space"]
+margin_left = -0.051178
+margin_top = 124.58
+margin_right = 93.9488
+margin_bottom = 170.58
+rect_rotation = -10.8901
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Price: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Imp_scarecrow" type="Button" parent="Button_upgrades"]
+margin_left = 626.557
+margin_top = 583.925
+margin_right = 764.557
+margin_bottom = 731.925
+rect_rotation = 9.94638
+custom_styles/hover = SubResource( 43 )
+custom_styles/pressed = SubResource( 44 )
+custom_styles/focus = SubResource( 45 )
+custom_styles/disabled = SubResource( 46 )
+custom_styles/normal = SubResource( 47 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sprite" type="Sprite" parent="Button_upgrades/Imp_scarecrow"]
+position = Vector2( 68.1032, 76.7459 )
+rotation = -0.0396032
+scale = Vector2( 0.660049, 0.660049 )
+texture = ExtResource( 13 )
+
+[node name="text" type="Label" parent="Button_upgrades/Imp_scarecrow"]
+margin_left = 28.3872
+margin_top = -33.5907
+margin_right = 178.387
+margin_bottom = 61.4093
+rect_rotation = 3.31112
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Improve
+   Scarecrow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="Button_upgrades/Imp_scarecrow"]
+margin_left = -0.051178
+margin_top = 124.58
+margin_right = 93.9488
+margin_bottom = 170.58
+rect_rotation = -10.8901
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Price: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="less_repair" type="Button" parent="Button_upgrades"]
+margin_left = 139.518
+margin_top = 864.256
+margin_right = 277.518
+margin_bottom = 1012.26
+rect_rotation = -15.2866
+custom_styles/hover = SubResource( 43 )
+custom_styles/pressed = SubResource( 44 )
+custom_styles/focus = SubResource( 45 )
+custom_styles/disabled = SubResource( 46 )
+custom_styles/normal = SubResource( 47 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sprite" type="Sprite" parent="Button_upgrades/less_repair"]
+position = Vector2( 68.1032, 76.7459 )
+rotation = -0.0396032
+scale = Vector2( 0.660049, 0.660049 )
+texture = ExtResource( 13 )
+
+[node name="text" type="Label" parent="Button_upgrades/less_repair"]
+margin_left = -25.8406
+margin_top = -24.9283
+margin_right = 168.159
+margin_bottom = 70.0717
+rect_rotation = 3.31112
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "    Less repair
+incidente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="Button_upgrades/less_repair"]
+margin_left = -0.051178
+margin_top = 124.58
+margin_right = 93.9488
+margin_bottom = 170.58
+rect_rotation = -10.8901
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Price: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="less_energy" type="Button" parent="Button_upgrades"]
+margin_left = 571.812
+margin_top = 802.904
+margin_right = 709.812
+margin_bottom = 950.904
+rect_rotation = 12.008
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sprite" type="Sprite" parent="Button_upgrades/less_energy"]
+position = Vector2( 68.1032, 76.7459 )
+rotation = -0.0396032
+scale = Vector2( 0.660049, 0.660049 )
+texture = ExtResource( 13 )
+
+[node name="text" type="Label" parent="Button_upgrades/less_energy"]
+margin_left = -20.6181
+margin_top = -26.0391
+margin_right = 194.382
+margin_bottom = 68.9609
+rect_rotation = 3.31112
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = " Less energy
+             usage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="Button_upgrades/less_energy"]
+margin_left = -0.051178
+margin_top = 124.58
+margin_right = 93.9488
+margin_bottom = 170.58
+rect_rotation = -10.8901
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Price: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Back_button" type="Node" parent="."]
 
 [node name="Back" type="Button" parent="Back_button"]
 margin_left = -169.109
-margin_top = 97.2066
+margin_top = 140.0
 margin_right = -31.11
-margin_bottom = 147.207
+margin_bottom = 190.0
 rect_rotation = 30.7538
+custom_styles/hover = SubResource( 40 )
+custom_styles/pressed = SubResource( 41 )
 custom_styles/focus = SubResource( 22 )
 custom_styles/disabled = SubResource( 23 )
 custom_styles/normal = SubResource( 24 )
@@ -752,6 +1368,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="anim_back_button" type="AnimationPlayer" parent="Back_button"]
+anims/event = SubResource( 20 )
+anims/event2 = SubResource( 21 )
+
 [node name="HUD" type="Node" parent="."]
 
 [node name="Day" type="Label" parent="HUD"]
@@ -760,7 +1380,7 @@ margin_top = 31.1889
 margin_right = 785.014
 margin_bottom = 72.1889
 rect_rotation = -15.6491
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 25 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Day: 66"
 __meta__ = {
@@ -773,7 +1393,7 @@ margin_top = 74.3331
 margin_right = 249.097
 margin_bottom = 115.333
 rect_rotation = -15.1
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 26 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "M: 666666666666666"
 __meta__ = {
@@ -786,7 +1406,7 @@ margin_top = 40.2855
 margin_right = 233.103
 margin_bottom = 81.2855
 rect_rotation = -29.0916
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 27 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "P: 35"
 __meta__ = {
@@ -805,7 +1425,7 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="HUD"]
-anims/event = SubResource( 17 )
+anims/event = SubResource( 28 )
 
 [node name="Dialog" type="Node" parent="."]
 
@@ -826,7 +1446,7 @@ margin_right = 659.467
 margin_bottom = 463.029
 rect_rotation = -1.22167
 rect_scale = Vector2( 1.00825, 1.00825 )
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 29 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Hi! This is the first concept of our game for Kindred Games Community Jam #8"
 autowrap = true
@@ -835,9 +1455,10 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="Dialog"]
-anims/event = SubResource( 18 )
+anims/event = SubResource( 30 )
 
 [connection signal="pressed" from="Button_main/Barn" to="." method="_on_Barn_pressed"]
 [connection signal="pressed" from="Button_main/Plantation" to="." method="_on_Plantation_pressed"]
 [connection signal="pressed" from="Button_main/Upgrades" to="." method="_on_Upgrades_pressed"]
+[connection signal="pressed" from="Button_main/next_day" to="." method="_on_next_day_pressed"]
 [connection signal="pressed" from="Back_button/Back" to="." method="_on_Back_pressed"]
