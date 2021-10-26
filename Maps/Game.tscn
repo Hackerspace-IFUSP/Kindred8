@@ -1,8 +1,8 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://Sprites/Button1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Crow.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Crow/pose1/path21805.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Button4.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Button3.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Textbox.png" type="Texture" id=6]
@@ -13,41 +13,154 @@
 [ext_resource path="res://Sprites/Button6.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Button5.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Big_button.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/milho_ui.png" type="Texture" id=14]
+[ext_resource path="res://Assets/UI/scarecrow_ui.png" type="Texture" id=15]
+[ext_resource path="res://Assets/shaders/shadow.shader" type="Shader" id=16]
+[ext_resource path="res://Assets/UI/repair_ui.png" type="Texture" id=17]
+[ext_resource path="res://Assets/UI/barn_ui.png" type="Texture" id=18]
+[ext_resource path="res://Assets/UI/energy_ui.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Scenario/corn/crops_with_maize.png" type="Texture" id=20]
+[ext_resource path="res://Assets/shaders/night.shader" type="Shader" id=21]
+[ext_resource path="res://Sprites/stars.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Scenario/corn/many_corn.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Scenario/corn/crops.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Scenario/barn.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Scenario/windmill1.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Scenario/windmill3.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Scenario/Silo.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Scenario/windmill2.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/house.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Scenario/storage.png" type="Texture" id=33]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 21 )
+shader_param/bg_color = null
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 1, 1, 1 )
+shader_param/texture_size = null
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/scare3.png-be3c18afc5ca26d7691cba8af25728dc.stex"
 
-[sub_resource type="StyleBoxEmpty" id=5]
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/scare2.png-fd2bafb279d91db4a527b51f57e3cd66.stex"
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="StreamTexture" id=8]
+flags = 4
+load_path = "res://.import/scare1.png-955f095028dfe1589c3c78bf289643aa.stex"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 249, 569 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 29 )
+region = Rect2( 0, 0, 249, 569 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 249, 569 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="DynamicFont" id=21]
 size = 45
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxEmpty" id=7]
+[sub_resource type="StyleBoxEmpty" id=22]
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="StyleBoxEmpty" id=23]
 
-[sub_resource type="StyleBoxEmpty" id=9]
+[sub_resource type="StyleBoxEmpty" id=24]
 
-[sub_resource type="StyleBoxEmpty" id=10]
+[sub_resource type="StyleBoxEmpty" id=25]
 
-[sub_resource type="StyleBoxEmpty" id=11]
+[sub_resource type="StyleBoxEmpty" id=26]
 
-[sub_resource type="StyleBoxEmpty" id=12]
+[sub_resource type="StyleBoxEmpty" id=27]
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxEmpty" id=28]
 
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxEmpty" id=29]
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=30]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -147,7 +260,7 @@ tracks/7/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.02, 1.02 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=31]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Barn:rect_position")
@@ -198,7 +311,7 @@ tracks/3/keys = {
 "values": [ Vector2( 651.335, 281 ), Vector2( 959.335, 281 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=32]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Barn:rect_position")
@@ -249,8 +362,7 @@ tracks/3/keys = {
 "values": [ Vector2( 959.335, 281 ), Vector2( 651.335, 281 ) ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "event"
+[sub_resource type="Animation" id=33]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Fix_b:rect_position")
@@ -277,7 +389,7 @@ tracks/1/keys = {
 "values": [ Vector2( 968.159, 78.2368 ), Vector2( 674.159, 78.2368 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=34]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Fix_b:rect_position")
@@ -304,15 +416,15 @@ tracks/1/keys = {
 "values": [ Vector2( 674.159, 78.2368 ), Vector2( 968.159, 78.2368 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=20]
+[sub_resource type="StyleBoxEmpty" id=35]
 
-[sub_resource type="StyleBoxEmpty" id=21]
+[sub_resource type="StyleBoxEmpty" id=36]
 
-[sub_resource type="StyleBoxEmpty" id=22]
+[sub_resource type="StyleBoxEmpty" id=37]
 
-[sub_resource type="StyleBoxEmpty" id=23]
+[sub_resource type="StyleBoxEmpty" id=38]
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=39]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Fix_p:rect_position")
@@ -339,8 +451,7 @@ tracks/1/keys = {
 "values": [ Vector2( 968.159, 78.2368 ), Vector2( 677.159, 78.2368 ) ]
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "event2"
+[sub_resource type="Animation" id=40]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Fix_p:rect_position")
@@ -367,28 +478,27 @@ tracks/1/keys = {
 "values": [ Vector2( 677.159, 78.2368 ), Vector2( 968.159, 78.2368 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=26]
+[sub_resource type="StyleBoxEmpty" id=41]
 
-[sub_resource type="StyleBoxEmpty" id=27]
+[sub_resource type="StyleBoxEmpty" id=42]
 
-[sub_resource type="StyleBoxEmpty" id=28]
+[sub_resource type="StyleBoxEmpty" id=43]
 
-[sub_resource type="StyleBoxEmpty" id=29]
+[sub_resource type="StyleBoxEmpty" id=44]
 
-[sub_resource type="StyleBoxEmpty" id=30]
+[sub_resource type="StyleBoxEmpty" id=45]
 
-[sub_resource type="StyleBoxEmpty" id=31]
+[sub_resource type="StyleBoxEmpty" id=46]
 
-[sub_resource type="StyleBoxEmpty" id=32]
+[sub_resource type="StyleBoxEmpty" id=47]
 
-[sub_resource type="StyleBoxEmpty" id=33]
+[sub_resource type="StyleBoxEmpty" id=48]
 
-[sub_resource type="StyleBoxEmpty" id=34]
+[sub_resource type="StyleBoxEmpty" id=49]
 
-[sub_resource type="StyleBoxEmpty" id=35]
+[sub_resource type="StyleBoxEmpty" id=50]
 
-[sub_resource type="Animation" id=36]
-resource_name = "event"
+[sub_resource type="Animation" id=51]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Imp_barn_space:rect_position")
@@ -451,7 +561,7 @@ tracks/4/keys = {
 "values": [ Vector2( 178.877, 589.954 ), Vector2( 178.877, 90.9541 ) ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=52]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Imp_barn_space:rect_position")
@@ -514,37 +624,37 @@ tracks/4/keys = {
 "values": [ Vector2( 178.877, 90.9541 ), Vector2( 178.877, 589.954 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=38]
+[sub_resource type="StyleBoxEmpty" id=53]
 
-[sub_resource type="StyleBoxEmpty" id=39]
+[sub_resource type="StyleBoxEmpty" id=54]
 
-[sub_resource type="StyleBoxEmpty" id=40]
+[sub_resource type="StyleBoxEmpty" id=55]
 
-[sub_resource type="StyleBoxEmpty" id=41]
+[sub_resource type="StyleBoxEmpty" id=56]
 
-[sub_resource type="StyleBoxEmpty" id=42]
+[sub_resource type="StyleBoxEmpty" id=57]
 
-[sub_resource type="StyleBoxTexture" id=64]
+[sub_resource type="StyleBoxTexture" id=58]
 
-[sub_resource type="StyleBoxTexture" id=65]
+[sub_resource type="StyleBoxTexture" id=59]
 
-[sub_resource type="StyleBoxTexture" id=66]
+[sub_resource type="StyleBoxTexture" id=60]
 
-[sub_resource type="StyleBoxTexture" id=67]
+[sub_resource type="StyleBoxTexture" id=61]
 
-[sub_resource type="StyleBoxTexture" id=68]
+[sub_resource type="StyleBoxTexture" id=62]
 
-[sub_resource type="StyleBoxEmpty" id=43]
+[sub_resource type="StyleBoxEmpty" id=63]
 
-[sub_resource type="StyleBoxEmpty" id=44]
+[sub_resource type="StyleBoxEmpty" id=64]
 
-[sub_resource type="StyleBoxEmpty" id=45]
+[sub_resource type="StyleBoxEmpty" id=65]
 
-[sub_resource type="StyleBoxEmpty" id=46]
+[sub_resource type="StyleBoxEmpty" id=66]
 
-[sub_resource type="StyleBoxEmpty" id=47]
+[sub_resource type="StyleBoxEmpty" id=67]
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=68]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("../Back_button/Back:rect_position")
@@ -559,7 +669,7 @@ tracks/0/keys = {
 "values": [ Vector2( -169.109, 140 ), Vector2( 51.891, 140 ) ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=69]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Back:rect_position")
@@ -574,25 +684,25 @@ tracks/0/keys = {
 "values": [ Vector2( 51.891, 140 ), Vector2( -169.109, 140 ) ]
 }
 
-[sub_resource type="DynamicFont" id=50]
+[sub_resource type="DynamicFont" id=70]
 size = 40
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=51]
+[sub_resource type="DynamicFont" id=71]
 size = 24
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=52]
+[sub_resource type="DynamicFont" id=72]
 size = 24
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=73]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -644,13 +754,21 @@ tracks/3/keys = {
 "values": [ -15.9285, -16.9 ]
 }
 
-[sub_resource type="DynamicFont" id=54]
+[sub_resource type="ShaderMaterial" id=74]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 1, 1, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="DynamicFont" id=75]
 size = 32
 outline_color = Color( 1, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=55]
+[sub_resource type="Animation" id=76]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -702,25 +820,24 @@ tracks/3/keys = {
 "values": [ 0.0, -1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=56]
+[sub_resource type="DynamicFont" id=77]
 size = 36
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxEmpty" id=57]
+[sub_resource type="StyleBoxEmpty" id=78]
 
-[sub_resource type="StyleBoxEmpty" id=58]
+[sub_resource type="StyleBoxEmpty" id=79]
 
-[sub_resource type="StyleBoxEmpty" id=59]
+[sub_resource type="StyleBoxEmpty" id=80]
 
-[sub_resource type="StyleBoxEmpty" id=60]
+[sub_resource type="StyleBoxEmpty" id=81]
 
-[sub_resource type="StyleBoxEmpty" id=61]
+[sub_resource type="StyleBoxEmpty" id=82]
 
-[sub_resource type="Animation" id=62]
-resource_name = "event"
+[sub_resource type="Animation" id=83]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -735,8 +852,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -525 ), Vector2( 0, 10 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=63]
-resource_name = "event2"
+[sub_resource type="Animation" id=84]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -765,14 +881,112 @@ __meta__ = {
 
 [node name="Discs" type="Node" parent="."]
 
-[node name="Buildings" type="Sprite" parent="Discs"]
-position = Vector2( 378.555, 869.157 )
-texture = ExtResource( 9 )
-
 [node name="Sky" type="Sprite" parent="Discs"]
 position = Vector2( 392.847, 808.596 )
 rotation = -0.00170684
 texture = ExtResource( 10 )
+
+[node name="stars" type="Sprite" parent="Discs/Sky"]
+material = SubResource( 1 )
+position = Vector2( 253.062, -14.1226 )
+rotation = -0.280508
+scale = Vector2( 1.36235, 1.04326 )
+texture = ExtResource( 22 )
+
+[node name="Buildings2" type="Sprite" parent="Discs"]
+visible = false
+position = Vector2( 378.555, 869.157 )
+texture = ExtResource( 9 )
+
+[node name="Buildings" type="Node2D" parent="Discs"]
+position = Vector2( 378.555, 869.157 )
+
+[node name="plantation" type="Node2D" parent="Discs/Buildings"]
+
+[node name="01" type="Sprite" parent="Discs/Buildings/plantation"]
+visible = false
+material = SubResource( 2 )
+position = Vector2( -426.555, -21.157 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 24 )
+
+[node name="02" type="Sprite" parent="Discs/Buildings/plantation"]
+visible = false
+material = SubResource( 2 )
+position = Vector2( -426.555, -21.157 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 20 )
+
+[node name="03" type="Sprite" parent="Discs/Buildings/plantation"]
+material = SubResource( 2 )
+position = Vector2( -394.555, -21.157 )
+rotation = -1.5708
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 23 )
+
+[node name="scarecrow01" type="Sprite" parent="Discs/Buildings/plantation"]
+material = SubResource( 3 )
+position = Vector2( -426.555, -21.157 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.8 )
+texture = SubResource( 4 )
+
+[node name="scarecrow02" type="Sprite" parent="Discs/Buildings/plantation"]
+visible = false
+material = SubResource( 5 )
+position = Vector2( -426.555, -21.157 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.8 )
+texture = SubResource( 6 )
+
+[node name="scarecrow03" type="Sprite" parent="Discs/Buildings/plantation"]
+visible = false
+material = SubResource( 7 )
+position = Vector2( -426.555, -21.157 )
+rotation = -1.5708
+scale = Vector2( 0.8, 0.8 )
+texture = SubResource( 8 )
+
+[node name="barn" type="Node2D" parent="Discs/Buildings"]
+
+[node name="01" type="Sprite" parent="Discs/Buildings/barn"]
+material = SubResource( 9 )
+position = Vector2( 5.44501, 506.843 )
+rotation = -3.14159
+texture = ExtResource( 25 )
+
+[node name="02" type="AnimatedSprite" parent="Discs/Buildings/barn"]
+material = SubResource( 9 )
+position = Vector2( 189.445, 578.843 )
+rotation = 3.14159
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="03" type="Sprite" parent="Discs/Buildings/barn"]
+material = SubResource( 9 )
+position = Vector2( -250.555, 530.843 )
+rotation = -3.14159
+texture = ExtResource( 28 )
+
+[node name="main" type="Node2D" parent="Discs/Buildings"]
+position = Vector2( 5.44501, 90.843 )
+
+[node name="House" type="Sprite" parent="Discs/Buildings/main"]
+material = SubResource( 14 )
+position = Vector2( 0, -544 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 30 )
+
+[node name="upgrades" type="Node2D" parent="Discs/Buildings"]
+
+[node name="storage" type="Sprite" parent="Discs/Buildings/upgrades"]
+material = SubResource( 15 )
+position = Vector2( 397.445, 10.843 )
+rotation = 1.5708
+texture = ExtResource( 33 )
 
 [node name="Button_main" type="Node" parent="."]
 
@@ -782,11 +996,11 @@ margin_top = 111.0
 margin_right = 821.997
 margin_bottom = 156.0
 rect_rotation = -18.165
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -806,7 +1020,7 @@ margin_right = 183.309
 margin_bottom = 33.9849
 rect_rotation = -4.08805
 rect_scale = Vector2( 1.01417, 1.01417 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Barn"
 __meta__ = {
@@ -819,11 +1033,11 @@ margin_top = 215.0
 margin_right = 740.0
 margin_bottom = 250.0
 rect_rotation = -19.5422
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 24 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -843,7 +1057,7 @@ margin_right = 184.513
 margin_bottom = 20.2932
 rect_rotation = 4.91988
 rect_scale = Vector2( 1.01417, 1.01417 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Plantation"
 __meta__ = {
@@ -856,10 +1070,10 @@ margin_top = 281.0
 margin_right = 825.332
 margin_bottom = 316.0
 rect_rotation = -22.5711
-custom_styles/hover = SubResource( 10 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 11 )
+custom_styles/hover = SubResource( 25 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 26 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -879,7 +1093,7 @@ margin_right = 141.714
 margin_bottom = 27.83
 rect_rotation = 4.91988
 rect_scale = Vector2( 1.01417, 1.01417 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Upgrades"
 __meta__ = {
@@ -892,11 +1106,11 @@ margin_top = 97.2066
 margin_right = 186.89
 margin_bottom = 147.207
 rect_rotation = 30.7538
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 29 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -916,7 +1130,7 @@ margin_right = 146.891
 margin_bottom = 36.2378
 rect_rotation = -4.33678
 rect_scale = Vector2( 1.01417, 1.01417 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Next Day"
 __meta__ = {
@@ -924,17 +1138,17 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="Button_main"]
-anims/event = SubResource( 15 )
+anims/event = SubResource( 30 )
 
 [node name="anim_button_change" type="AnimationPlayer" parent="Button_main"]
-anims/event = SubResource( 16 )
-anims/event2 = SubResource( 17 )
+anims/event = SubResource( 31 )
+anims/event2 = SubResource( 32 )
 
 [node name="Button_barn" type="Node" parent="."]
 
 [node name="anim_barn" type="AnimationPlayer" parent="Button_barn"]
-anims/event = SubResource( 18 )
-anims/event2 = SubResource( 19 )
+anims/event = SubResource( 33 )
+anims/event2 = SubResource( 34 )
 
 [node name="Scare_off_b" type="Button" parent="Button_barn"]
 margin_left = 968.159
@@ -942,11 +1156,11 @@ margin_top = 78.2368
 margin_right = 1106.16
 margin_bottom = 128.237
 rect_rotation = 24.466
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 35 )
+custom_styles/pressed = SubResource( 36 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 29 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -965,7 +1179,7 @@ margin_top = 2.49571
 margin_right = 126.982
 margin_bottom = 48.4957
 rect_rotation = -4.33678
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Scare off"
 __meta__ = {
@@ -978,11 +1192,11 @@ margin_top = 175.781
 margin_right = 1077.57
 margin_bottom = 225.781
 rect_rotation = 24.466
-custom_styles/hover = SubResource( 22 )
-custom_styles/pressed = SubResource( 23 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 29 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1001,7 +1215,7 @@ margin_top = 2.49571
 margin_right = 126.982
 margin_bottom = 48.4957
 rect_rotation = -4.33678
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Fix Barn"
 __meta__ = {
@@ -1015,8 +1229,8 @@ one_shot = true
 [node name="Button_plantation" type="Node" parent="."]
 
 [node name="anim_plantation" type="AnimationPlayer" parent="Button_plantation"]
-anims/event = SubResource( 24 )
-anims/event2 = SubResource( 25 )
+anims/event = SubResource( 39 )
+anims/event2 = SubResource( 40 )
 
 [node name="Scare_off_p" type="Button" parent="Button_plantation"]
 margin_left = 968.159
@@ -1024,11 +1238,11 @@ margin_top = 78.2368
 margin_right = 1106.16
 margin_bottom = 128.237
 rect_rotation = 24.466
-custom_styles/hover = SubResource( 26 )
-custom_styles/pressed = SubResource( 27 )
-custom_styles/focus = SubResource( 28 )
-custom_styles/disabled = SubResource( 29 )
-custom_styles/normal = SubResource( 30 )
+custom_styles/hover = SubResource( 41 )
+custom_styles/pressed = SubResource( 42 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/disabled = SubResource( 44 )
+custom_styles/normal = SubResource( 45 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1047,7 +1261,7 @@ margin_top = 2.49571
 margin_right = 126.982
 margin_bottom = 48.4957
 rect_rotation = -4.33678
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Scare off"
 __meta__ = {
@@ -1060,11 +1274,11 @@ margin_top = 175.781
 margin_right = 1077.57
 margin_bottom = 225.781
 rect_rotation = 24.466
-custom_styles/hover = SubResource( 31 )
-custom_styles/pressed = SubResource( 32 )
-custom_styles/focus = SubResource( 33 )
-custom_styles/disabled = SubResource( 34 )
-custom_styles/normal = SubResource( 35 )
+custom_styles/hover = SubResource( 46 )
+custom_styles/pressed = SubResource( 47 )
+custom_styles/focus = SubResource( 48 )
+custom_styles/disabled = SubResource( 49 )
+custom_styles/normal = SubResource( 50 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1083,7 +1297,7 @@ margin_top = 0.766479
 margin_right = 166.222
 margin_bottom = 46.7665
 rect_rotation = -4.33678
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Fix Scarecrow"
 __meta__ = {
@@ -1096,8 +1310,8 @@ one_shot = true
 [node name="Button_upgrades" type="Node" parent="."]
 
 [node name="anim_upgrades" type="AnimationPlayer" parent="Button_upgrades"]
-anims/event = SubResource( 36 )
-anims/event2 = SubResource( 37 )
+anims/event = SubResource( 51 )
+anims/event2 = SubResource( 52 )
 
 [node name="Imp_harvest" type="Button" parent="Button_upgrades"]
 margin_left = 178.877
@@ -1105,11 +1319,11 @@ margin_top = 589.954
 margin_right = 316.878
 margin_bottom = 737.954
 rect_rotation = -9.53626
-custom_styles/hover = SubResource( 38 )
-custom_styles/pressed = SubResource( 39 )
-custom_styles/focus = SubResource( 40 )
-custom_styles/disabled = SubResource( 41 )
-custom_styles/normal = SubResource( 42 )
+custom_styles/hover = SubResource( 53 )
+custom_styles/pressed = SubResource( 54 )
+custom_styles/focus = SubResource( 55 )
+custom_styles/disabled = SubResource( 56 )
+custom_styles/normal = SubResource( 57 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1122,13 +1336,19 @@ rotation = -0.0396032
 scale = Vector2( 0.660049, 0.660049 )
 texture = ExtResource( 13 )
 
+[node name="milho_ui" type="Sprite" parent="Button_upgrades/Imp_harvest"]
+position = Vector2( 58.5512, 68.6956 )
+rotation = 3.80623e-08
+scale = Vector2( 0.782988, 0.782988 )
+texture = ExtResource( 14 )
+
 [node name="text" type="Label" parent="Button_upgrades/Imp_harvest"]
 margin_left = -9.95036
 margin_top = -6.66941
 margin_right = 161.05
 margin_bottom = 88.3306
 rect_rotation = -10.8901
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Improve
       harvast"
@@ -1142,7 +1362,7 @@ margin_top = 124.58
 margin_right = 93.9488
 margin_bottom = 170.58
 rect_rotation = -10.8901
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Price: 100"
 __meta__ = {
@@ -1155,11 +1375,11 @@ margin_top = 608.691
 margin_right = 545.647
 margin_bottom = 756.69
 rect_rotation = 9.94638
-custom_styles/hover = SubResource( 38 )
-custom_styles/pressed = SubResource( 39 )
-custom_styles/focus = SubResource( 40 )
-custom_styles/disabled = SubResource( 41 )
-custom_styles/normal = SubResource( 42 )
+custom_styles/hover = SubResource( 53 )
+custom_styles/pressed = SubResource( 54 )
+custom_styles/focus = SubResource( 55 )
+custom_styles/disabled = SubResource( 56 )
+custom_styles/normal = SubResource( 57 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1172,13 +1392,18 @@ rotation = -0.0396032
 scale = Vector2( 0.660049, 0.660049 )
 texture = ExtResource( 13 )
 
+[node name="barn_ui" type="Sprite" parent="Button_upgrades/Imp_barn_space"]
+position = Vector2( 40.4493, 89.6701 )
+scale = Vector2( 0.621983, 0.621983 )
+texture = ExtResource( 18 )
+
 [node name="text" type="Label" parent="Button_upgrades/Imp_barn_space"]
 margin_left = 28.3872
 margin_top = -33.5907
 margin_right = 178.387
 margin_bottom = 61.4093
 rect_rotation = 3.31112
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Improve
 barn Space	"
@@ -1192,7 +1417,7 @@ margin_top = 124.58
 margin_right = 93.9488
 margin_bottom = 170.58
 rect_rotation = -10.8901
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Price: 100"
 __meta__ = {
@@ -1205,11 +1430,11 @@ margin_top = 583.925
 margin_right = 764.557
 margin_bottom = 731.925
 rect_rotation = 9.94638
-custom_styles/hover = SubResource( 38 )
-custom_styles/pressed = SubResource( 39 )
-custom_styles/focus = SubResource( 40 )
-custom_styles/disabled = SubResource( 41 )
-custom_styles/normal = SubResource( 42 )
+custom_styles/hover = SubResource( 53 )
+custom_styles/pressed = SubResource( 54 )
+custom_styles/focus = SubResource( 55 )
+custom_styles/disabled = SubResource( 56 )
+custom_styles/normal = SubResource( 57 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1222,13 +1447,17 @@ rotation = -0.0396032
 scale = Vector2( 0.660049, 0.660049 )
 texture = ExtResource( 13 )
 
+[node name="scarecrow_ui" type="Sprite" parent="Button_upgrades/Imp_scarecrow"]
+position = Vector2( 7.16711, 55.6739 )
+texture = ExtResource( 15 )
+
 [node name="text" type="Label" parent="Button_upgrades/Imp_scarecrow"]
 margin_left = 28.3872
 margin_top = -33.5907
 margin_right = 178.387
 margin_bottom = 61.4093
 rect_rotation = 3.31112
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Improve
    Scarecrow"
@@ -1242,7 +1471,7 @@ margin_top = 124.58
 margin_right = 93.9488
 margin_bottom = 170.58
 rect_rotation = -10.8901
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Price: 100"
 __meta__ = {
@@ -1255,11 +1484,11 @@ margin_top = 864.256
 margin_right = 277.518
 margin_bottom = 1012.26
 rect_rotation = -15.2866
-custom_styles/hover = SubResource( 38 )
-custom_styles/pressed = SubResource( 39 )
-custom_styles/focus = SubResource( 40 )
-custom_styles/disabled = SubResource( 41 )
-custom_styles/normal = SubResource( 42 )
+custom_styles/hover = SubResource( 53 )
+custom_styles/pressed = SubResource( 54 )
+custom_styles/focus = SubResource( 55 )
+custom_styles/disabled = SubResource( 56 )
+custom_styles/normal = SubResource( 57 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1272,13 +1501,17 @@ rotation = -0.0396032
 scale = Vector2( 0.660049, 0.660049 )
 texture = ExtResource( 13 )
 
+[node name="repair_ui" type="Sprite" parent="Button_upgrades/less_repair"]
+position = Vector2( 121.535, 57.8325 )
+texture = ExtResource( 17 )
+
 [node name="text" type="Label" parent="Button_upgrades/less_repair"]
 margin_left = -25.8406
 margin_top = -24.9283
 margin_right = 168.159
 margin_bottom = 70.0717
 rect_rotation = 3.31112
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "    Less repair
 incident"
@@ -1292,7 +1525,7 @@ margin_top = 124.58
 margin_right = 93.9488
 margin_bottom = 170.58
 rect_rotation = -10.8901
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Price: 100"
 __meta__ = {
@@ -1305,11 +1538,11 @@ margin_top = 802.904
 margin_right = 709.812
 margin_bottom = 950.904
 rect_rotation = 12.008
-custom_styles/hover = SubResource( 64 )
-custom_styles/pressed = SubResource( 65 )
-custom_styles/focus = SubResource( 66 )
-custom_styles/disabled = SubResource( 67 )
-custom_styles/normal = SubResource( 68 )
+custom_styles/hover = SubResource( 58 )
+custom_styles/pressed = SubResource( 59 )
+custom_styles/focus = SubResource( 60 )
+custom_styles/disabled = SubResource( 61 )
+custom_styles/normal = SubResource( 62 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1328,7 +1561,7 @@ margin_top = -26.0391
 margin_right = 194.382
 margin_bottom = 68.9609
 rect_rotation = 3.31112
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = " Less energy
              usage"
@@ -1342,12 +1575,16 @@ margin_top = 124.58
 margin_right = 93.9488
 margin_bottom = 170.58
 rect_rotation = -10.8901
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Price: 100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="energy_ui" type="Sprite" parent="Button_upgrades/less_energy"]
+position = Vector2( 35.786, 71.209 )
+texture = ExtResource( 19 )
 
 [node name="Back_button" type="Node" parent="."]
 
@@ -1357,11 +1594,11 @@ margin_top = 140.0
 margin_right = -31.11
 margin_bottom = 190.0
 rect_rotation = 30.7538
-custom_styles/hover = SubResource( 43 )
-custom_styles/pressed = SubResource( 44 )
-custom_styles/focus = SubResource( 45 )
-custom_styles/disabled = SubResource( 46 )
-custom_styles/normal = SubResource( 47 )
+custom_styles/hover = SubResource( 63 )
+custom_styles/pressed = SubResource( 64 )
+custom_styles/focus = SubResource( 65 )
+custom_styles/disabled = SubResource( 66 )
+custom_styles/normal = SubResource( 67 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1380,7 +1617,7 @@ margin_top = -8.98334
 margin_right = 146.745
 margin_bottom = 37.0167
 rect_rotation = -4.33678
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Back"
 __meta__ = {
@@ -1388,8 +1625,8 @@ __meta__ = {
 }
 
 [node name="anim_back_button" type="AnimationPlayer" parent="Back_button"]
-anims/event = SubResource( 48 )
-anims/event2 = SubResource( 49 )
+anims/event = SubResource( 68 )
+anims/event2 = SubResource( 69 )
 
 [node name="HUD" type="Node" parent="."]
 
@@ -1400,7 +1637,7 @@ margin_right = 785.014
 margin_bottom = 72.1889
 rect_rotation = -14.8214
 rect_scale = Vector2( 1.00789, 1.00789 )
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 70 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Day: 66"
 __meta__ = {
@@ -1413,7 +1650,7 @@ margin_top = 80.0
 margin_right = 371.0
 margin_bottom = 121.0
 rect_rotation = -18.9845
-custom_fonts/font = SubResource( 51 )
+custom_fonts/font = SubResource( 71 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Barn Capacity: 200"
 __meta__ = {
@@ -1426,7 +1663,7 @@ margin_top = 48.0
 margin_right = 256.0
 margin_bottom = 89.0
 rect_rotation = -16.695
-custom_fonts/font = SubResource( 52 )
+custom_fonts/font = SubResource( 72 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Corn: 00"
 __meta__ = {
@@ -1445,40 +1682,39 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="HUD"]
-anims/event = SubResource( 53 )
+anims/event = SubResource( 73 )
 
 [node name="Dialog" type="Node" parent="."]
 
 [node name="Textbox" type="Sprite" parent="Dialog"]
-visible = false
+material = SubResource( 74 )
 position = Vector2( 416, 418.894 )
 scale = Vector2( 0.98, 0.98 )
 texture = ExtResource( 6 )
 
 [node name="Crow" type="Sprite" parent="Dialog"]
-visible = false
-position = Vector2( 133, 296.894 )
-scale = Vector2( 1.05, 1.05 )
+material = SubResource( 74 )
+position = Vector2( 144, 312 )
+scale = Vector2( 0.571595, 0.571595 )
 texture = ExtResource( 3 )
 
 [node name="Text" type="Label" parent="Dialog"]
-visible = false
 margin_left = 118.467
 margin_top = 394.029
 margin_right = 659.467
 margin_bottom = 463.029
 rect_rotation = -1.22167
 rect_scale = Vector2( 1.00825, 1.00825 )
-custom_fonts/font = SubResource( 54 )
+custom_fonts/font = SubResource( 75 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Hi! This is the first concept of our game for Kindred Games Community Jam #8"
+text = "Hi! This is the one concept of our game for Kindred Games Community Jam #8"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="anim" type="AnimationPlayer" parent="Dialog"]
-anims/event = SubResource( 55 )
+anims/event = SubResource( 76 )
 
 [node name="Daily_report" type="Node2D" parent="."]
 position = Vector2( 0, -525 )
@@ -1498,7 +1734,7 @@ __meta__ = {
 margin_top = 23.0
 margin_right = 840.0
 margin_bottom = 63.0
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 77 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Daily Report #00:"
 align = 1
@@ -1511,7 +1747,7 @@ __meta__ = {
 margin_top = 194.0
 margin_right = 840.0
 margin_bottom = 234.0
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 77 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Corn earned: 0000"
 align = 1
@@ -1524,7 +1760,7 @@ __meta__ = {
 margin_top = 257.0
 margin_right = 840.0
 margin_bottom = 294.0
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 77 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Corn lost: 0000"
 align = 1
@@ -1537,7 +1773,7 @@ __meta__ = {
 margin_top = 321.0
 margin_right = 840.0
 margin_bottom = 361.0
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 77 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Total:"
 align = 1
@@ -1552,11 +1788,11 @@ margin_top = 368.0
 margin_right = 801.999
 margin_bottom = 418.0
 rect_rotation = 30.7538
-custom_styles/hover = SubResource( 57 )
-custom_styles/pressed = SubResource( 58 )
-custom_styles/focus = SubResource( 59 )
-custom_styles/disabled = SubResource( 60 )
-custom_styles/normal = SubResource( 61 )
+custom_styles/hover = SubResource( 78 )
+custom_styles/pressed = SubResource( 79 )
+custom_styles/focus = SubResource( 80 )
+custom_styles/disabled = SubResource( 81 )
+custom_styles/normal = SubResource( 82 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1575,7 +1811,7 @@ margin_top = -3.82709
 margin_right = 149.813
 margin_bottom = 42.173
 rect_rotation = -4.33678
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Return"
 __meta__ = {
@@ -1583,8 +1819,8 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="Daily_report"]
-anims/event = SubResource( 62 )
-anims/event2 = SubResource( 63 )
+anims/event = SubResource( 83 )
+anims/event2 = SubResource( 84 )
 
 [connection signal="pressed" from="Button_main/Barn" to="." method="_on_Barn_pressed"]
 [connection signal="pressed" from="Button_main/Plantation" to="." method="_on_Plantation_pressed"]
