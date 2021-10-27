@@ -3,24 +3,22 @@ extends Node
 enum{main,barn,plantation,upgrades}
 var location = main
 
-var corn = 200000
+var corn = 100
 var capacity = 200
 var day = 0 
-var increase_corn = 100
-var decrease_corn = 50
-var energy = 100 
-var barn_crows = 3
-var barn_damages = 3
+
+var energy = 100
 var plantation_crows = 3
 var plantation_damages = 3 
 var sky_rotation = 0 
 
+var energy_usage = 25
 
-var imp_harv_val = [100,200,400,800,1000,10000]
-var imp_barn_val = [100,200,400,800,1000,10000]
-var imp_scarecrow_val = [100,200,400,800,1000,10000]
-var imp_repair_val = [100,200,400,800,1000,10000]
-var imp_energy_val = [100,200,400,800,1000,10000]
+var imp_harv_val = [100,150,250,350,600,1200]
+var imp_barn_val = [100,150,250,350,600,1000]
+var imp_scarecrow_val = [100,150,350,600]
+var imp_repair_val = [100,150,350,600]
+var imp_energy_val = [100,200]
 
 var imp_harv = 0
 var imp_barn = 0
@@ -28,14 +26,33 @@ var imp_scarecrow = 0
 var imp_repair = 0
 var imp_energy = 0
 
+var crows_in_barn = 2
+var crow_in_plantation = 2
+var damages_in_barn = 0
+var damages_in_plantation = 0 
+
+var repair_incident
+
 
 func _ready():
 	$Button_main/anim.play("event")
 	$HUD/anim.play("event")
 	$Dialog/anim.play("event")
-
-func _process(delta):
+	$HUD/Day.text = str("Day: ", day)
+	$HUD/Barn_capacity.text = str("Barn Capacity: ",capacity)
+	$HUD/Corn.text = str("Corn: ", corn)
+	$Button_barn/crows_in_barn.text = str("Crows: ", crows_in_barn)
+	$Button_barn/damages_in_barn.text = str("Damages: ", damages_in_barn)
+	$Button_plantation/damages_in_plantation.text = str ("Damages: ", damages_in_plantation)
+	$Button_plantation/crows_in_plantation.text = str ("Crows: ", crow_in_plantation)
 	
+	$Button_upgrades/Imp_barn_space/price.text = str("Price: ", imp_barn_val[0])
+	$Button_upgrades/Imp_harvest/price.text = str("Price: ", imp_harv_val[0])
+	$Button_upgrades/Imp_scarecrow/price.text = str("Price: ", imp_scarecrow_val[0])
+	$Button_upgrades/less_energy/price.text = str("Price: ", imp_energy_val[0])
+	$Button_upgrades/less_repair/price.text = str("Price: ", imp_repair_val[0])
+	
+func _process(delta):
 	sky_change()
 	rotate()
 	if Input.is_action_just_pressed("ui_down"):
@@ -103,24 +120,60 @@ func _on_return_pressed():
 
 func change_day():
 	day += 1 
-	corn += increase_corn - decrease_corn
-	$Daily_report/corn_earned.text = str("Corn earned: ", increase_corn)
-	$Daily_report/corn_lost.text = str("Corn lost: ", decrease_corn)
+	var corn_earned_in_plantation = rand_range(10,20) + 10 * imp_harv
+	var corn_lost_in_plantation = 5 * (crow_in_plantation + damages_in_plantation)
+	var corn_by_plantation = int(corn_earned_in_plantation - corn_lost_in_plantation)
+	
+	var corn_lost = - 3 * (crows_in_barn + damages_in_barn)
+	
+	
+	corn += corn_by_plantation + corn_lost
+	
+	if corn > capacity:
+		corn = capacity
+	elif corn < 0:
+		corn = int(0)
+	
+	
+	var add_crow_in_plantation = int(3 - imp_scarecrow/2)
+	crow_in_plantation += int(rand_range(0 , add_crow_in_plantation))  + int(randi()%2)
+	if crow_in_plantation > 5:
+		crow_in_plantation = 5
+	var add_crow_in_barn = int(3 - imp_scarecrow/2)
+	crows_in_barn += int(rand_range(0,add_crow_in_barn))  + int(randi()%2)
+	if crows_in_barn > 5:
+		crows_in_barn = 5
+	var add_damage_in_plantation = int(3 - imp_repair/2)
+	damages_in_plantation += int(rand_range(0,add_damage_in_plantation))  + int(randi()%2)
+	if damages_in_plantation > 5:
+		damages_in_plantation = 5
+	var add_damage_in_barn = int(3 - imp_repair/2)
+	damages_in_barn += int(rand_range(0,add_damage_in_barn)) + int(randi()%2)
+	if damages_in_barn > 5:
+		damages_in_barn = 5
+	
+	$Daily_report/corn_earned.text = str("Corn earned: ", corn_by_plantation)
+	$Daily_report/corn_lost.text = str("Corn lost: ", corn_lost)
 	$Daily_report/total.text = str("Total: ", corn)
 	$HUD/Corn.text = str("Corn: ", corn)
 	$HUD/Day.text = str("Day:", day)
-
+	$Button_barn/damages_in_barn.text = str("Damages: ", damages_in_barn)
+	$Button_barn/crows_in_barn.text = str("Crows: ", crows_in_barn)
+	$Button_plantation/damages_in_plantation.text = str ("Damages: ", damages_in_plantation)
+	$Button_plantation/crows_in_plantation.text = str ("Crows: ", crow_in_plantation)
 
 ####barn button################################################################
 
 func _on_Scare_off_b_pressed():
-	if energy >= 25:
-		barn_crows -= 1
+	if energy >= energy_usage:
+		if crows_in_barn > 0:
+			crows_in_barn -= 1
 		barn_buttons_event()
 
 func _on_Fix_b_pressed():
-	if energy >= 25:
-		barn_damages -= 1 
+	if energy >= energy_usage:
+		if damages_in_barn > 0:
+			damages_in_barn -= 1
 		barn_buttons_event()
 
 		
@@ -139,17 +192,21 @@ func _on_timer_barn_event_timeout():
 		$Back_button/Back.disabled = false
 		$Button_barn/anim_barn.play("event")
 		$Back_button/anim_back_button.play("event")
+		$Button_barn/damages_in_barn.text = str("Damages: ", damages_in_barn)
+		$Button_barn/crows_in_barn.text = str("Crows: ", crows_in_barn)
 		
 ####plantation button###########################################################
 func _on_Scare_off_p_pressed():
-	if energy >= 25:
-		barn_crows -= 1
+	if energy >= energy_usage:
+		if crow_in_plantation > 0:
+			crow_in_plantation -= 1
 		plantation_buttons_event()
 
 
 func _on_Fix_p_pressed():
-	if energy >= 25:
-		barn_damages -= 1 
+	if energy >= energy_usage:
+		if damages_in_plantation > 0:
+			damages_in_plantation -= 1
 		plantation_buttons_event()
 
 
@@ -168,13 +225,21 @@ func _on_timer_plantation_event_timeout():
 		$Button_plantation/Scare_off_p.disabled = false
 		$Button_plantation/Fix_p.disabled = false
 		$Back_button/Back.disabled = false
+		$Button_plantation/damages_in_plantation.text = str ("Damages: ", damages_in_plantation)
+		$Button_plantation/crows_in_plantation.text = str ("Crows: ", crow_in_plantation)
+
 
 ####energy_change###############################################################
 
 func energy_change():
-	energy -= 25
-	$HUD/Energy_bar.rect_scale.y -= .25
-	sky_rotation += PI/3
+	energy -= energy_usage
+	$HUD/Energy_bar.rect_scale.y -=float(energy_usage)/float(100)
+	if energy_usage == 25:
+		sky_rotation += PI/3
+	elif energy_usage == 20:
+		sky_rotation += PI/4
+	elif energy_usage == 16.666:
+		sky_rotation += PI/5
 	#sky_change()
 
 
@@ -213,6 +278,11 @@ func _on_Imp_harvest_pressed():
 			$Button_upgrades/Imp_harvest/price.text = str("Full")
 			$Button_upgrades/Imp_harvest.disabled = true
 
+	if imp_harv == 2:
+		$"Discs/Buildings/plantation/02".show()
+	elif imp_harv == 4:
+		$"Discs/Buildings/plantation/03".show()
+
 func _on_Imp_barn_space_pressed():
 	if corn >= imp_barn_val[imp_barn] and imp_barn < len(imp_barn_val):
 		corn -= imp_barn_val[imp_barn]
@@ -224,7 +294,15 @@ func _on_Imp_barn_space_pressed():
 			$HUD/Corn.text = str("Corn: ", corn)
 			$Button_upgrades/Imp_barn_space/price.text = str("Full")
 			$Button_upgrades/Imp_barn_space.disabled = true
-
+			
+		capacity += 180
+		$HUD/Barn_capacity.text = str("Barn Capacity: ", capacity)
+		
+	if imp_barn == 2:
+		$"Discs/Buildings/barn/02".show()
+	elif imp_barn == 4:
+		$"Discs/Buildings/barn/03".show()
+		
 
 func _on_Imp_scarecrow_pressed():
 	if corn >= imp_scarecrow_val[imp_scarecrow] and imp_scarecrow < len(imp_scarecrow_val):
@@ -237,7 +315,15 @@ func _on_Imp_scarecrow_pressed():
 			$HUD/Corn.text = str("Corn: ", corn)
 			$Button_upgrades/Imp_scarecrow/price.text = str("Full")
 			$Button_upgrades/Imp_scarecrow.disabled = true
-
+	
+	if imp_scarecrow == 1:
+		$"Discs/Buildings/plantation/scarecrow01".show()
+	elif imp_scarecrow == 2:
+		$"Discs/Buildings/plantation/scarecrow01".hide()
+		$"Discs/Buildings/plantation/scarecrow02".show()
+	elif imp_scarecrow == 3:
+		$"Discs/Buildings/plantation/scarecrow02".hide()
+		$"Discs/Buildings/plantation/scarecrow03".show()
 
 func _on_less_repair_pressed():
 	if corn >= imp_repair_val[imp_repair] and imp_repair < len(imp_repair_val):
@@ -250,6 +336,7 @@ func _on_less_repair_pressed():
 			$HUD/Corn.text = str("Corn: ", corn)
 			$Button_upgrades/less_repair/price.text = str("Full")
 			$Button_upgrades/less_repair.disabled = true
+	print ("imp_repair ", imp_repair)
 
 
 func _on_less_energy_pressed():
@@ -263,3 +350,8 @@ func _on_less_energy_pressed():
 			$HUD/Corn.text = str("Corn: ", corn)
 			$Button_upgrades/less_energy/price.text = str("Full")
 			$Button_upgrades/less_energy.disabled = true
+		
+		if imp_energy == 1:
+			energy_usage = 20
+		elif imp_energy == 2:
+			energy_usage = 16.666

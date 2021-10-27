@@ -388,6 +388,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 968.159, 78.2368 ), Vector2( 674.159, 78.2368 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("crows_in_barn:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 957.097, 75.9453 ), Vector2( 260, 76 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("damages_in_barn:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 952, 144 ), Vector2( 255, 144 ) ]
+}
 
 [sub_resource type="Animation" id=34]
 length = 0.3
@@ -414,6 +438,30 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 674.159, 78.2368 ), Vector2( 968.159, 78.2368 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("crows_in_barn:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 260, 76 ), Vector2( 963, 76 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("damages_in_barn:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 255, 144 ), Vector2( 958, 144 ) ]
 }
 
 [sub_resource type="StyleBoxEmpty" id=35]
@@ -450,6 +498,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 968.159, 78.2368 ), Vector2( 677.159, 78.2368 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("crows_in_plantation:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 963, 76 ), Vector2( 260, 76 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("damages_in_plantation:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 958, 144 ), Vector2( 255, 144 ) ]
+}
 
 [sub_resource type="Animation" id=40]
 length = 0.3
@@ -476,6 +548,30 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 677.159, 78.2368 ), Vector2( 968.159, 78.2368 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("crows_in_plantation:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 260, 76 ), Vector2( 900, 76 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("damages_in_plantation:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 255, 144 ), Vector2( 900, 144 ) ]
 }
 
 [sub_resource type="StyleBoxEmpty" id=41]
@@ -754,6 +850,53 @@ tracks/3/keys = {
 "values": [ -15.9285, -16.9 ]
 }
 
+[sub_resource type="DynamicFont" id=77]
+size = 36
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxEmpty" id=78]
+
+[sub_resource type="StyleBoxEmpty" id=79]
+
+[sub_resource type="StyleBoxEmpty" id=80]
+
+[sub_resource type="StyleBoxEmpty" id=81]
+
+[sub_resource type="StyleBoxEmpty" id=82]
+
+[sub_resource type="Animation" id=83]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -525 ), Vector2( 0, 10 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=84]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -525 ) ]
+}
+
 [sub_resource type="ShaderMaterial" id=74]
 shader = ExtResource( 16 )
 shader_param/offset = Vector2( 0.02, 0.02 )
@@ -820,53 +963,6 @@ tracks/3/keys = {
 "values": [ 0.0, -1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=77]
-size = 36
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxEmpty" id=78]
-
-[sub_resource type="StyleBoxEmpty" id=79]
-
-[sub_resource type="StyleBoxEmpty" id=80]
-
-[sub_resource type="StyleBoxEmpty" id=81]
-
-[sub_resource type="StyleBoxEmpty" id=82]
-
-[sub_resource type="Animation" id=83]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -525 ), Vector2( 0, 10 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=84]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -525 ) ]
-}
-
 [node name="Game" type="Node"]
 script = ExtResource( 2 )
 
@@ -904,7 +1000,6 @@ position = Vector2( 378.555, 869.157 )
 [node name="plantation" type="Node2D" parent="Discs/Buildings"]
 
 [node name="01" type="Sprite" parent="Discs/Buildings/plantation"]
-visible = false
 material = SubResource( 2 )
 position = Vector2( -426.555, -21.157 )
 rotation = -1.5708
@@ -920,6 +1015,7 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 20 )
 
 [node name="03" type="Sprite" parent="Discs/Buildings/plantation"]
+visible = false
 material = SubResource( 2 )
 position = Vector2( -394.555, -21.157 )
 rotation = -1.5708
@@ -927,6 +1023,7 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 23 )
 
 [node name="scarecrow01" type="Sprite" parent="Discs/Buildings/plantation"]
+visible = false
 material = SubResource( 3 )
 position = Vector2( -426.555, -21.157 )
 rotation = -1.5708
@@ -958,14 +1055,16 @@ rotation = -3.14159
 texture = ExtResource( 25 )
 
 [node name="02" type="AnimatedSprite" parent="Discs/Buildings/barn"]
+visible = false
 material = SubResource( 9 )
 position = Vector2( 189.445, 578.843 )
 rotation = 3.14159
 frames = SubResource( 13 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="03" type="Sprite" parent="Discs/Buildings/barn"]
+visible = false
 material = SubResource( 9 )
 position = Vector2( -250.555, 530.843 )
 rotation = -3.14159
@@ -1226,6 +1325,32 @@ __meta__ = {
 wait_time = 3.0
 one_shot = true
 
+[node name="crows_in_barn" type="Label" parent="Button_barn"]
+margin_left = 963.0
+margin_top = 76.0
+margin_right = 1072.0
+margin_bottom = 122.0
+rect_rotation = -4.3
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Crows: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="damages_in_barn" type="Label" parent="Button_barn"]
+margin_left = 958.0
+margin_top = 144.0
+margin_right = 1096.0
+margin_bottom = 190.0
+rect_rotation = 4.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Damages:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button_plantation" type="Node" parent="."]
 
 [node name="anim_plantation" type="AnimationPlayer" parent="Button_plantation"]
@@ -1306,6 +1431,32 @@ __meta__ = {
 
 [node name="timer_plantation_event" type="Timer" parent="Button_plantation"]
 one_shot = true
+
+[node name="crows_in_plantation" type="Label" parent="Button_plantation"]
+margin_left = 900.0
+margin_top = 76.0
+margin_right = 1009.0
+margin_bottom = 122.0
+rect_rotation = -4.3
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Crows: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="damages_in_plantation" type="Label" parent="Button_plantation"]
+margin_left = 900.0
+margin_top = 144.0
+margin_right = 1038.0
+margin_bottom = 190.0
+rect_rotation = 4.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Damages:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_upgrades" type="Node" parent="."]
 
@@ -1684,38 +1835,6 @@ __meta__ = {
 [node name="anim" type="AnimationPlayer" parent="HUD"]
 anims/event = SubResource( 73 )
 
-[node name="Dialog" type="Node" parent="."]
-
-[node name="Textbox" type="Sprite" parent="Dialog"]
-material = SubResource( 74 )
-position = Vector2( 416, 418.894 )
-scale = Vector2( 0.98, 0.98 )
-texture = ExtResource( 6 )
-
-[node name="Crow" type="Sprite" parent="Dialog"]
-material = SubResource( 74 )
-position = Vector2( 144, 312 )
-scale = Vector2( 0.571595, 0.571595 )
-texture = ExtResource( 3 )
-
-[node name="Text" type="Label" parent="Dialog"]
-margin_left = 118.467
-margin_top = 394.029
-margin_right = 659.467
-margin_bottom = 463.029
-rect_rotation = -1.22167
-rect_scale = Vector2( 1.00825, 1.00825 )
-custom_fonts/font = SubResource( 75 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Hi! This is the one concept of our game for Kindred Games Community Jam #8"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="anim" type="AnimationPlayer" parent="Dialog"]
-anims/event = SubResource( 76 )
-
 [node name="Daily_report" type="Node2D" parent="."]
 position = Vector2( 0, -525 )
 __meta__ = {
@@ -1821,6 +1940,43 @@ __meta__ = {
 [node name="anim" type="AnimationPlayer" parent="Daily_report"]
 anims/event = SubResource( 83 )
 anims/event2 = SubResource( 84 )
+
+[node name="Dialog" type="Node" parent="."]
+
+[node name="Textbox" type="Sprite" parent="Dialog"]
+visible = false
+material = SubResource( 74 )
+position = Vector2( 416, 418.894 )
+rotation = 0.00147695
+scale = Vector2( 0.983385, 0.983385 )
+texture = ExtResource( 6 )
+
+[node name="Crow" type="Sprite" parent="Dialog"]
+visible = false
+material = SubResource( 74 )
+position = Vector2( 144, 312 )
+rotation = -0.0029539
+scale = Vector2( 1.04154, 1.04154 )
+texture = ExtResource( 3 )
+
+[node name="Text" type="Label" parent="Dialog"]
+visible = false
+margin_left = 118.467
+margin_top = 394.029
+margin_right = 659.467
+margin_bottom = 463.029
+rect_rotation = -1.22167
+rect_scale = Vector2( 1.00825, 1.00825 )
+custom_fonts/font = SubResource( 75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Hi! This is the one concept of our game for Kindred Games Community Jam #8"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="Dialog"]
+anims/event = SubResource( 76 )
 
 [connection signal="pressed" from="Button_main/Barn" to="." method="_on_Barn_pressed"]
 [connection signal="pressed" from="Button_main/Plantation" to="." method="_on_Plantation_pressed"]
