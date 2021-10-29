@@ -1,0 +1,203 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Dialog_system/text_bg/dialog-background.png" type="Texture" id=2]
+[ext_resource path="res://Dialog_system/fonts/GOUDYSTO.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Dialog_system/scripts/Dialog_box.gd" type="Script" id=4]
+[ext_resource path="res://Dialog_system/sfx/menu_101.wav" type="AudioStream" id=16]
+[ext_resource path="res://Dialog_system/sfx/Thunder.wav" type="AudioStream" id=17]
+[ext_resource path="res://Dialog_system/Sprites/Fox_face-Sheet.png" type="Texture" id=18]
+
+[sub_resource type="Animation" id=85]
+resource_name = "Event1"
+length = 2.0
+
+[sub_resource type="Animation" id=86]
+resource_name = "Event2"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=87]
+resource_name = "Event3"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=88]
+resource_name = "Event4"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=89]
+resource_name = "Event5"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Event1 = SubResource( 85 )
+anims/Event2 = SubResource( 86 )
+anims/Event3 = SubResource( 87 )
+anims/Event4 = SubResource( 88 )
+anims/Event5 = SubResource( 89 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 63.3038, 62.4915 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 18 )
+hframes = 15
+frame = 7
+
+[node name="Dialog_box" type="Control" parent="."]
+margin_left = 2.7937
+margin_top = 505.921
+margin_right = 1023.79
+margin_bottom = 662.921
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Dialog_box"]
+visible = false
+anchor_left = 0.5
+anchor_top = 2.264
+anchor_right = 0.5
+anchor_bottom = 2.264
+margin_left = -359.0
+margin_top = -355.448
+margin_right = 359.0
+margin_bottom = -198.448
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog_box"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_top = -402.0
+margin_right = -583.996
+margin_bottom = -423.0
+grow_horizontal = 0
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "action!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Dialog_box"]
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+attenuation = 0.378929
+
+[node name="dialogue_timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="dialogue_timer" to="Dialog_box" method="_on_dialogue_timer_timeout"]

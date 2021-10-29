@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Thunder.wav-6b09198a8304a1aba1b6ae5f2369451f.sample"
+
+[deps]
+
+source_file="res://Dialog_system/sfx/Thunder.wav"
+dest_files=[ "res://.import/Thunder.wav-6b09198a8304a1aba1b6ae5f2369451f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

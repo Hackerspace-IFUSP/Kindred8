@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Kindred 8"
-run/main_scene="res://Maps/Game.tscn"
+run/main_scene="res://Maps/Advice.tscn"
 config/icon="res://icon.png"
 
 [display]

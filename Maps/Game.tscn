@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=2]
+[gd_scene load_steps=153 format=2]
 
 [ext_resource path="res://Sprites/Button1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
@@ -30,7 +30,29 @@
 [ext_resource path="res://Assets/Scenario/Silo.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Scenario/windmill2.png" type="Texture" id=29]
 [ext_resource path="res://Sprites/house.png" type="Texture" id=30]
+[ext_resource path="res://Dialog_system/scripts/Dialog_box.gd" type="Script" id=31]
+[ext_resource path="res://Music/Infestation in the Control Room.mp3" type="AudioStream" id=32]
 [ext_resource path="res://Assets/Scenario/storage.png" type="Texture" id=33]
+[ext_resource path="res://Dialog_system/sfx/Thunder.wav" type="AudioStream" id=34]
+[ext_resource path="res://Dialog_system/sfx/menu_101.wav" type="AudioStream" id=35]
+[ext_resource path="res://SFX/151578__dwoboyle__door-handle-jiggle-04.wav" type="AudioStream" id=36]
+[ext_resource path="res://SFX/85585__jankoehl__hit-wood04.wav" type="AudioStream" id=37]
+[ext_resource path="res://Assets/Crow/pose1/path21807.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Crow/pose1/path21809.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Crow/pose1/path21813.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Crow/pose1/path21819.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Crow/pose1/path21831.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Crow/pose1/path21829.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Crow/pose1/path21825.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Crow/pose1/path31803.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Crow/pose1/path21823.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Crow/pose1/path21821.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Crow/pose1/path21815.png" type="Texture" id=48]
+[ext_resource path="res://SFX/371811__iamgiorgio__h2-shower-curtain.mp3" type="AudioStream" id=49]
+[ext_resource path="res://SFX/124925__inchadney__crow.wav" type="AudioStream" id=50]
+[ext_resource path="res://SFX/557133__melisandepope__hammer.wav" type="AudioStream" id=51]
+[ext_resource path="res://Assets/Crow/pose2/path22029.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/hammer.png" type="Texture" id=53]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 21 )
@@ -108,7 +130,7 @@ animations = [ {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [sub_resource type="ShaderMaterial" id=14]
@@ -850,14 +872,178 @@ tracks/3/keys = {
 "values": [ -15.9285, -16.9 ]
 }
 
-[sub_resource type="DynamicFont" id=77]
+[sub_resource type="Animation" id=74]
+resource_name = "fix"
+tracks/0/type = "value"
+tracks/0/path = NodePath("hammer1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1272, 280 ), Vector2( 1272, 280 ), Vector2( 1272, 280 ), Vector2( 1272, 280 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hammer1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -28.12, -28.12, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hammer2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 984, 248 ), Vector2( 984, 248 ), Vector2( 984, 248 ), Vector2( 984, 248 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("hammer2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 58.8, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hammer2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hammer1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "sacreoff"
+tracks/0/type = "value"
+tracks/0/path = NodePath("crow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 984, 392 ), Vector2( 624, 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("crow1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1232, 392 ), Vector2( 1680, 96 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("crow2:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -20.8517 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("crow1:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 22.3499 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("crow2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("crow1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=76]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 1, 1, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="ShaderMaterial" id=77]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.02, 0.02 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.1
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="DynamicFont" id=78]
 size = 36
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxEmpty" id=78]
 
 [sub_resource type="StyleBoxEmpty" id=79]
 
@@ -867,7 +1053,9 @@ font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxEmpty" id=82]
 
-[sub_resource type="Animation" id=83]
+[sub_resource type="StyleBoxEmpty" id=83]
+
+[sub_resource type="Animation" id=84]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -882,7 +1070,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -525 ), Vector2( 0, 10 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=84]
+[sub_resource type="Animation" id=85]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -897,7 +1085,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -525 ) ]
 }
 
-[sub_resource type="ShaderMaterial" id=74]
+[sub_resource type="ShaderMaterial" id=86]
 shader = ExtResource( 16 )
 shader_param/offset = Vector2( 0.02, 0.02 )
 shader_param/speed_offset = 1.0
@@ -905,17 +1093,146 @@ shader_param/speed_shadow = 0.1
 shader_param/modulate = Color( 1, 1, 1, 1 )
 shader_param/texture_size = null
 
-[sub_resource type="DynamicFont" id=75]
-size = 32
-outline_color = Color( 1, 0, 0, 1 )
+[sub_resource type="ShaderMaterial" id=87]
+shader = ExtResource( 16 )
+shader_param/offset = Vector2( 0.06, 0.06 )
+shader_param/speed_offset = 1.0
+shader_param/speed_shadow = 0.05
+shader_param/modulate = Color( 1, 0, 0, 1 )
+shader_param/texture_size = null
+
+[sub_resource type="Animation" id=88]
+length = 2.0
+
+[sub_resource type="Animation" id=89]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=90]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 34 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=91]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 35 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=92]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sfx:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 35 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sfx:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="DynamicFont" id=93]
+size = 36
+outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=76]
+[sub_resource type="StyleBoxEmpty" id=94]
+
+[sub_resource type="StyleBoxEmpty" id=95]
+
+[sub_resource type="StyleBoxEmpty" id=96]
+
+[sub_resource type="StyleBoxEmpty" id=97]
+
+[sub_resource type="StyleBoxEmpty" id=98]
+
+[sub_resource type="Animation" id=99]
+resource_name = "event"
 length = 0.6
-loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Textbox:rotation_degrees")
+tracks/0/path = NodePath("ColorRect2:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -924,43 +1241,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.5 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Textbox:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.98, 0.98 ), Vector2( 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Crow:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.05, 1.05 ), Vector2( 1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Crow:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -1.0 ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -525 ) ]
 }
 
 [node name="Game" type="Node"]
@@ -1060,7 +1341,6 @@ material = SubResource( 9 )
 position = Vector2( 189.445, 578.843 )
 rotation = 3.14159
 frames = SubResource( 13 )
-frame = 2
 playing = true
 
 [node name="03" type="Sprite" parent="Discs/Buildings/barn"]
@@ -1322,7 +1602,7 @@ __meta__ = {
 }
 
 [node name="timer_barn_event" type="Timer" parent="Button_barn"]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="crows_in_barn" type="Label" parent="Button_barn"]
@@ -1430,6 +1710,7 @@ __meta__ = {
 }
 
 [node name="timer_plantation_event" type="Timer" parent="Button_plantation"]
+wait_time = 2.0
 one_shot = true
 
 [node name="crows_in_plantation" type="Label" parent="Button_plantation"]
@@ -1835,6 +2116,43 @@ __meta__ = {
 [node name="anim" type="AnimationPlayer" parent="HUD"]
 anims/event = SubResource( 73 )
 
+[node name="animated" type="Node2D" parent="."]
+position = Vector2( -720, 56 )
+
+[node name="anim_fix_and_scare" type="AnimationPlayer" parent="animated"]
+anims/fix = SubResource( 74 )
+anims/sacreoff = SubResource( 75 )
+
+[node name="crow1" type="Sprite" parent="animated"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 76 )
+position = Vector2( 1680, 96 )
+rotation = 0.390079
+scale = Vector2( -0.3, 0.3 )
+texture = ExtResource( 52 )
+
+[node name="crow2" type="Sprite" parent="animated"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 76 )
+position = Vector2( 624, 16 )
+rotation = -0.363931
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 52 )
+
+[node name="hammer1" type="Sprite" parent="animated"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 77 )
+position = Vector2( 1272, 280 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 53 )
+
+[node name="hammer2" type="Sprite" parent="animated"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 77 )
+position = Vector2( 984, 248 )
+scale = Vector2( -0.8, 0.8 )
+texture = ExtResource( 53 )
+
 [node name="Daily_report" type="Node2D" parent="."]
 position = Vector2( 0, -525 )
 __meta__ = {
@@ -1853,7 +2171,7 @@ __meta__ = {
 margin_top = 23.0
 margin_right = 840.0
 margin_bottom = 63.0
-custom_fonts/font = SubResource( 77 )
+custom_fonts/font = SubResource( 78 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Daily Report #00:"
 align = 1
@@ -1866,7 +2184,7 @@ __meta__ = {
 margin_top = 194.0
 margin_right = 840.0
 margin_bottom = 234.0
-custom_fonts/font = SubResource( 77 )
+custom_fonts/font = SubResource( 78 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Corn earned: 0000"
 align = 1
@@ -1879,7 +2197,7 @@ __meta__ = {
 margin_top = 257.0
 margin_right = 840.0
 margin_bottom = 294.0
-custom_fonts/font = SubResource( 77 )
+custom_fonts/font = SubResource( 78 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Corn lost: 0000"
 align = 1
@@ -1892,7 +2210,7 @@ __meta__ = {
 margin_top = 321.0
 margin_right = 840.0
 margin_bottom = 361.0
-custom_fonts/font = SubResource( 77 )
+custom_fonts/font = SubResource( 78 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Total:"
 align = 1
@@ -1907,11 +2225,11 @@ margin_top = 368.0
 margin_right = 801.999
 margin_bottom = 418.0
 rect_rotation = 30.7538
-custom_styles/hover = SubResource( 78 )
-custom_styles/pressed = SubResource( 79 )
-custom_styles/focus = SubResource( 80 )
-custom_styles/disabled = SubResource( 81 )
-custom_styles/normal = SubResource( 82 )
+custom_styles/hover = SubResource( 79 )
+custom_styles/pressed = SubResource( 80 )
+custom_styles/focus = SubResource( 81 )
+custom_styles/disabled = SubResource( 82 )
+custom_styles/normal = SubResource( 83 )
 expand_icon = true
 __meta__ = {
 "_edit_group_": true,
@@ -1938,45 +2256,231 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="Daily_report"]
-anims/event = SubResource( 83 )
-anims/event2 = SubResource( 84 )
+anims/event = SubResource( 84 )
+anims/event2 = SubResource( 85 )
 
-[node name="Dialog" type="Node" parent="."]
-
-[node name="Textbox" type="Sprite" parent="Dialog"]
-visible = false
-material = SubResource( 74 )
-position = Vector2( 416, 418.894 )
-rotation = 0.00147695
-scale = Vector2( 0.983385, 0.983385 )
-texture = ExtResource( 6 )
-
-[node name="Crow" type="Sprite" parent="Dialog"]
-visible = false
-material = SubResource( 74 )
-position = Vector2( 144, 312 )
-rotation = -0.0029539
-scale = Vector2( 1.04154, 1.04154 )
-texture = ExtResource( 3 )
-
-[node name="Text" type="Label" parent="Dialog"]
-visible = false
-margin_left = 118.467
-margin_top = 394.029
-margin_right = 659.467
-margin_bottom = 463.029
-rect_rotation = -1.22167
-rect_scale = Vector2( 1.00825, 1.00825 )
-custom_fonts/font = SubResource( 75 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Hi! This is the one concept of our game for Kindred Games Community Jam #8"
-autowrap = true
+[node name="Dialog" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="anim" type="AnimationPlayer" parent="Dialog"]
-anims/event = SubResource( 76 )
+[node name="Textbox" type="Sprite" parent="Dialog"]
+material = SubResource( 86 )
+position = Vector2( 416, 416 )
+scale = Vector2( 0.98, 0.98 )
+texture = ExtResource( 6 )
+
+[node name="crow_sprites" type="Node2D" parent="Dialog"]
+
+[node name="form1" type="Node2D" parent="Dialog/crow_sprites"]
+
+[node name="01" type="Sprite" parent="Dialog/crow_sprites/form1"]
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="02" type="Sprite" parent="Dialog/crow_sprites/form1"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 38 )
+
+[node name="03" type="Sprite" parent="Dialog/crow_sprites/form1"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 47 )
+
+[node name="04" type="Sprite" parent="Dialog/crow_sprites/form1"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 46 )
+
+[node name="form2" type="Node2D" parent="Dialog/crow_sprites"]
+visible = false
+
+[node name="01" type="Sprite" parent="Dialog/crow_sprites/form2"]
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+
+[node name="02" type="Sprite" parent="Dialog/crow_sprites/form2"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 48 )
+
+[node name="03" type="Sprite" parent="Dialog/crow_sprites/form2"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 44 )
+
+[node name="04" type="Sprite" parent="Dialog/crow_sprites/form2"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 42 )
+
+[node name="form3" type="Node2D" parent="Dialog/crow_sprites"]
+visible = false
+
+[node name="01" type="Sprite" parent="Dialog/crow_sprites/form3"]
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 40 )
+
+[node name="02" type="Sprite" parent="Dialog/crow_sprites/form3"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 41 )
+
+[node name="03" type="Sprite" parent="Dialog/crow_sprites/form3"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 43 )
+
+[node name="04" type="Sprite" parent="Dialog/crow_sprites/form3"]
+visible = false
+material = SubResource( 87 )
+position = Vector2( 88, 312 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 45 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog"]
+anims/Event1 = SubResource( 88 )
+anims/Event2 = SubResource( 89 )
+anims/Event3 = SubResource( 90 )
+anims/Event4 = SubResource( 91 )
+anims/Event5 = SubResource( 92 )
+
+[node name="Dialog_box" type="Control" parent="Dialog"]
+margin_top = 512.0
+margin_right = 1021.0
+margin_bottom = 669.0
+rect_rotation = 0.00753426
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog/Dialog_box"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_top = -152.0
+margin_right = -358.996
+margin_bottom = -31.0
+grow_horizontal = 0
+rect_rotation = -1.13928
+custom_fonts/normal_font = SubResource( 93 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "action!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Dialog/Dialog_box"]
+
+[node name="next" type="Button" parent="Dialog"]
+margin_left = 728.0
+margin_top = 440.0
+margin_right = 866.001
+margin_bottom = 490.0
+rect_rotation = 24.466
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/hover = SubResource( 94 )
+custom_styles/pressed = SubResource( 95 )
+custom_styles/focus = SubResource( 96 )
+custom_styles/disabled = SubResource( 97 )
+custom_styles/normal = SubResource( 98 )
+expand_icon = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Sprite" parent="Dialog/next"]
+position = Vector2( 74.3566, 23.1131 )
+rotation = -0.451966
+scale = Vector2( 0.98, 0.98 )
+texture = ExtResource( 12 )
+
+[node name="ActionA4" type="Label" parent="Dialog/next"]
+margin_left = 25.1581
+margin_top = -2.65798
+margin_right = 163.158
+margin_bottom = 43.342
+rect_rotation = -4.33678
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="Dialog"]
+stream = ExtResource( 35 )
+attenuation = 0.378929
+
+[node name="dialogue_timer" type="Timer" parent="Dialog"]
+wait_time = 3.0
+one_shot = true
+
+[node name="audios" type="Node" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="audios"]
+stream = ExtResource( 32 )
+
+[node name="sfx" type="Node" parent="audios"]
+
+[node name="buttons" type="AudioStreamPlayer" parent="audios/sfx"]
+stream = ExtResource( 37 )
+volume_db = -5.0
+
+[node name="wheel_buttons" type="AudioStreamPlayer" parent="audios/sfx"]
+stream = ExtResource( 36 )
+volume_db = -10.0
+
+[node name="next_day" type="AudioStreamPlayer" parent="audios/sfx"]
+stream = ExtResource( 49 )
+volume_db = -10.0
+
+[node name="crow" type="AudioStreamPlayer" parent="audios/sfx"]
+stream = ExtResource( 50 )
+volume_db = -15.0
+
+[node name="repair" type="AudioStreamPlayer" parent="audios/sfx"]
+stream = ExtResource( 51 )
+volume_db = -10.0
+
+[node name="transition" type="AnimationPlayer" parent="."]
+anims/event = SubResource( 99 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+margin_top = -525.0
+margin_right = 840.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Button_main/Barn" to="." method="_on_Barn_pressed"]
 [connection signal="pressed" from="Button_main/Plantation" to="." method="_on_Plantation_pressed"]
@@ -1989,9 +2493,17 @@ anims/event = SubResource( 76 )
 [connection signal="pressed" from="Button_plantation/Fix_p" to="." method="_on_Fix_p_pressed"]
 [connection signal="timeout" from="Button_plantation/timer_plantation_event" to="." method="_on_timer_plantation_event_timeout"]
 [connection signal="pressed" from="Button_upgrades/Imp_harvest" to="." method="_on_Imp_harvest_pressed"]
+[connection signal="pressed" from="Button_upgrades/Imp_harvest" to="Dialog/Dialog_box" method="upgrade_button"]
 [connection signal="pressed" from="Button_upgrades/Imp_barn_space" to="." method="_on_Imp_barn_space_pressed"]
+[connection signal="pressed" from="Button_upgrades/Imp_barn_space" to="Dialog/Dialog_box" method="upgrade_button"]
 [connection signal="pressed" from="Button_upgrades/Imp_scarecrow" to="." method="_on_Imp_scarecrow_pressed"]
+[connection signal="pressed" from="Button_upgrades/Imp_scarecrow" to="Dialog/Dialog_box" method="upgrade_button"]
 [connection signal="pressed" from="Button_upgrades/less_repair" to="." method="_on_less_repair_pressed"]
+[connection signal="pressed" from="Button_upgrades/less_repair" to="Dialog/Dialog_box" method="upgrade_button"]
 [connection signal="pressed" from="Button_upgrades/less_energy" to="." method="_on_less_energy_pressed"]
+[connection signal="pressed" from="Button_upgrades/less_energy" to="Dialog/Dialog_box" method="upgrade_button"]
 [connection signal="pressed" from="Back_button/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="Daily_report/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Daily_report/return" to="Dialog/Dialog_box" method="_on_return_pressed"]
+[connection signal="pressed" from="Dialog/next" to="Dialog/Dialog_box" method="_on_next_pressed"]
+[connection signal="timeout" from="Dialog/dialogue_timer" to="Dialog/Dialog_box" method="_on_dialogue_timer_timeout"]

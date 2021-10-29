@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Infestation in the Control Room.mp3-633a4a8052c9eea2d87a1c086fff3754.mp3str"
+
+[deps]
+
+source_file="res://Music/Infestation in the Control Room.mp3"
+dest_files=[ "res://.import/Infestation in the Control Room.mp3-633a4a8052c9eea2d87a1c086fff3754.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

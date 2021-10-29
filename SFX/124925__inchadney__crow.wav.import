@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/124925__inchadney__crow.wav-54a50140b142dfb1a6ff94f4afdd2f71.sample"
+
+[deps]
+
+source_file="res://SFX/124925__inchadney__crow.wav"
+dest_files=[ "res://.import/124925__inchadney__crow.wav-54a50140b142dfb1a6ff94f4afdd2f71.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
