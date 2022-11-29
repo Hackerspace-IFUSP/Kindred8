@@ -25,18 +25,18 @@ var dialog = [
 	"What's left for us now is revenge. We're going to let everyone starve to pay for what they did to your brother.",
 	"Let them all starve now! In the meantime, let's survive; just me and you...",
 	"Well, I need to take care of the plantation now. Daily I will offer you some of my harvest.",
-	"Please take care of site administration and repairs. I will come back every 15 days to talk about progress.",
+	"Please take care of site administration and repairs. I will come back every 7 days to talk about progress.",
 	"In the meantime, how about scaring off some crows in the plantation and in the barn? Looks like some traitors are causing trouble there.",
 	"Be careful not to overwork too! When your energy runs out, come back here and rest. If you use up all your energy, you won't be able to work anymore.",
 	"You can also make some Upgrades if you prefer. Remember, repairing this farm is our goal. Then you must perform all available upgrades.",
-	"See you soon. I'll be back to report in 15 days."
+	"See you soon. I'll be back to report in 7 days."
 ]
 
 var dialog2 = [
 	"Looked like you're having some problems, right? Those damned traitors, they leave your brother and now they want to rob us...",
 	"To his brother, all crows were family. But look at this? It was only he managed to finish off the humans that the crows betrayed him.",
 	"But I'm glad to see them starving. Revenge, sweet revenge!",
-	"Well, I need to get back to work now. Again, see you in 15 days."
+	"Well, I need to get back to work now. Again, see you in 7 days."
 	
 ]
 
@@ -46,14 +46,14 @@ var dialog3 = [
 	"We have the last corn plantation now. They may keep coming, but in the end, we'll just survive the two of us!",
 	"They will pay for everything they did to you. For your brother, let's do this together.",
 	"I will be back to work again. I'll keep an eye on yo.... I mean, on the plantation.",
-	"See you in 15 days."
+	"See you in 7 days."
 ]
 
 var dialog4 = [
 	"Irmão, lider, acabar, humanos, juntos, prosperar, irmãos, liderar, traição, traição, traição, traição!!!",
 	"Are you alright sir? ",
 	"1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
-	"Nos vemos em 15 dias"
+	"Nos vemos em 7 dias"
 	
 ]
 
@@ -63,25 +63,25 @@ var dialog5 = [
 	"After all, it was for them that we expelled humans. We take care of everything anyway, don't we? Destroying all food reserves and means of production was a genius plan, sir.",
 	"You are also a sensational leader! You made it possible for everyone in the world to come here and live together",
 	"But they were all traitors, they had to end it all, didn't they??",
-	"In 15 days."
+	"In 7 days."
 ]
 
 var dialog6 = [
 	"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
 	"ME ME ME MEM ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME ME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
 	"Traitor?",
-	"15 days"
+	"7 days"
 ]
 
 var dialog7 = [
 	"It looks like things are looking up, sir. The farm repair is going as planned and your brother is very proud!",
 	"I'm sure our brothers will be happy when they arrive. Soon we'll have food for everyone!",
-	"See you in 15 days. Our mission is close to be completed."
+	"See you in 7 days. Our mission is close to be completed."
 ]
 
 var dialog8 = [
 	"Traitor, me?",
-	"15"
+	"7"
 ]
 
 var dialog9 = [
@@ -90,7 +90,7 @@ var dialog9 = [
 	"Unfortunately, I couldn't find your brother either... I hope he's okay! He will still lead us to prosperity.",
 	"He's brilliant, isn't he? And I envy him so much. How I would like to be him.",
 	"Unfortunately, we had our falling out; he was a pacifist and was totally against the plan of human extinction. But I love him so much.",
-	"See you in 15 days, sir!"
+	"See you in 7 days, sir!"
 ]
 
 
@@ -107,14 +107,14 @@ var dialog10 = [
 	"Look at me now! I was right all along!",
 	"I was right!",
 	"And now I'm alone...",
-	"No more than 15 days, I don't have anyone now... I'll just prove to myself that I was capable. Because the others are no longer here to see.",
+	"No more than 7 days, I don't have anyone now... I'll just prove to myself that I was capable. Because the others are no longer here to see.",
 	"and live!",
 	"alone..."
 ]
 
 var alternative_dialog = [
 	"Hmmmmm, very welll! It's look you're doing good.",
-	"I have not to say yet. See you in 15 days."
+	"I have not to say yet. See you in 7 days."
 ]
 
 onready var dialogo = dialog
@@ -186,7 +186,7 @@ func _on_return_pressed():
 	day += 1
 	
 	
-	if day%15 == 0:
+	if day%7 == 0:
 		if upgrade_counter > 0 and upgrade_counter < 3:
 			if dialog_status[0] == 1:
 				dialogo = dialog2
